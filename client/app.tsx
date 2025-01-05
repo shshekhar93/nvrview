@@ -7,6 +7,8 @@ import { LAYOUTS, NUM_STREAMS, VIDEO_ASPECT_RATIO } from "./config/constants";
 
 const App: React.FC = () => {
   const [streams, setStreams] = useState<string[]>([]);
+  const [hqStreamId, setHqStreamId] = useState<string>("");
+
   const [css] = useStyletron();
 
   const loadNextStream = () => {
@@ -50,6 +52,10 @@ const App: React.FC = () => {
                 key={streamId}
                 streamId={streamId}
                 onPlayerLoaded={loadNextStream}
+                hqStreamId={hqStreamId}
+                onFullscreenToggle={() =>
+                  setHqStreamId((old) => (old === streamId ? "" : streamId))
+                }
               />
             ))}
           </div>

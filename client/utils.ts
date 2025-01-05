@@ -1,3 +1,5 @@
+import { KeyboardEvent } from "react";
+
 export function chunkify<T>(arr: T[], maxlen: number): T[][] {
   const copy = [...arr];
   const chunks = [];
@@ -20,4 +22,16 @@ export function isFullScreen() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     !!(document as any).mozFullScreenElement
   );
+}
+
+export function accessibleClick(onClick: () => void) {
+  return {
+    tabIndex: 0,
+    onClick,
+    onKeyUp: (e: KeyboardEvent) => {
+      if (e.key === "Enter") {
+        onClick();
+      }
+    },
+  };
 }
