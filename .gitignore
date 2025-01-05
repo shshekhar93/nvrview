@@ -1,0 +1,6 @@
+# node
+node_modules/
+
+# generated files
+build/
+dist/

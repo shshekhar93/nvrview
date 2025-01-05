@@ -1,0 +1,45 @@
+{
+  "name": "nvrview",
+  "version": "0.0.1",
+  "description": "NVR Viewer and server that realys information from nvr and cameras",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "cd src && eslint --fix && cd ../client && eslint --fix && cd ../ && prettier . --write",
+    "start:dev": "concurrently \"tsc --watch --preserveWatchOutput\" \"nodemon dist/src/index.js\" \"webpack -w\"",
+    "build": "tsc && webpack",
+    "start": "node dist/src/index.js"
+  },
+  "author": "Shashi Shekhar <shshekhar93@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-ws": "^5.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rtsp-relay": "^1.9.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/express": "^5.0.0",
+    "@types/express-ws": "^3.0.5",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "@types/styletron-react": "^5.0.8",
+    "concurrently": "^9.1.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.13.0",
+    "nodemon": "^3.1.7",
+    "prettier": "3.4.2",
+    "styletron-engine-atomic": "^1.6.2",
+    "styletron-react": "^6.1.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
