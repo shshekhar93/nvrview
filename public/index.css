@@ -131,3 +131,7 @@ table {
 }
 
 /* End CSS Reset */
+
+* {
+  box-sizing: border-box;
+}
