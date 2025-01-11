@@ -1,0 +1,9 @@
+{
+  "background_color": "#071218",
+  "display": "standalone",
+  "lang": "en",
+  "name": "NVR View",
+  "short_name": "NV",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait"
+}

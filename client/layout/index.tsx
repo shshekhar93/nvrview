@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "./header";
 import { Content } from "./content";
 import { Footer } from "./footer";
@@ -9,6 +9,11 @@ import { useTheme } from "./theme";
 export function Layout({ children }: { children: React.ReactNode }) {
   const [css] = useStyletron();
   const theme = useTheme();
+  
+  useEffect(() => {
+    globalThis.document.body.style.backgroundColor = theme.app.header;
+  }, []);
+
   return (
     <div
       id="nvrview-root"
