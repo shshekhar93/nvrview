@@ -39,7 +39,7 @@ export const Player = React.memo(function Player({
 
     setLoading(true);
     const player = await loadPlayer({
-      url: `ws://${location.host}${streamURL}`,
+      url: `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}${streamURL}`,
       canvas: canvasRef.current,
       audio: false,
     });

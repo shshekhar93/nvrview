@@ -9,7 +9,7 @@ import { useTheme } from "./theme";
 export function Layout({ children }: { children: React.ReactNode }) {
   const [css] = useStyletron();
   const theme = useTheme();
-  
+
   useEffect(() => {
     globalThis.document.body.style.backgroundColor = theme.app.header;
   }, []);
